@@ -19,5 +19,25 @@ describe 'apache::default' do
       chef_run # This should not raise an error
     end
 
+    it 'installs hpttd' do
+      expect(chef_run).to install_package "httpd"
+    end
+
+    it 'starts the httpd service' do
+      expect(chef_run).to start_service "httpd"
+    end
+
   end
 end
+
+
+
+
+
+
+
+
+
+
+
+
