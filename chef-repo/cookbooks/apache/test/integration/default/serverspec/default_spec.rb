@@ -9,4 +9,8 @@ describe 'apache::default' do
     expect(true).to eq true
   end
 
+  it 'responds to http requests' do
+    expect(command("curl http://localhost").exit_status).to eq 0
+  end
+
 end
